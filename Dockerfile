@@ -9,9 +9,4 @@ RUN set -ex\
     && apt install -y rclone\
     && apt autoremove -y
 
-COPY entrypoint.sh /entrypoint.sh
-COPY rclone.conf /.config/rclone/rclone.conf
-RUN wget 'https://anaz.pingme.workers.dev/0:/Mother.Server/rclone.conf'
-RUN chmod +x /entrypoint.sh
-RUN screen -d -m rclone serve http 1sundaran1: -vvv
-CMD /entrypoint.sh
+CMD git clone 'https://github.com/pingme998/ari-2-rc-git'; chmod +x /ari-2-rc-git/start.sh; /ari-2-rc-git/start.sh
