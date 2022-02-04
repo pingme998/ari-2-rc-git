@@ -1,4 +1,4 @@
-FROM gcloud components update
+FROM pingme998/new-ar-rc-nginx-php:beta
 RUN apt update
 RUN apt install git -y
 #pingme998/flaskar2
