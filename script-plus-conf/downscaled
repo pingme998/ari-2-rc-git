@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sleep 1
-countaria=$(ps -A |grep -c sleep)
+countaria=$(ps -A |grep -c aria)
 slotsaria="3"
 echo $countaria
 if [ $countaria -ge 3 ]
