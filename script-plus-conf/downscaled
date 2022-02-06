@@ -17,3 +17,5 @@ echo "$availaria"
 head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/process/selfid.conf
 sed -i -e "1,$availaria d" /home/url.txt
 #folder /ari-2-rc-git/script-plus-conf/process
+
+fi
