@@ -14,8 +14,7 @@ echo "$availaria"
 #file /ari-2-rc-git/script-plus-conf/delay.sh
 #bash /ari-2-rc-git/script-plus-conf/delay.sh
 
-head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/process/download.sh
+head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/process/currenturl
 sed -i -e "1,$availaria d" /home/url.txt
-#folder /ari-2-rc-git/script-plus-conf/process
 
 fi
