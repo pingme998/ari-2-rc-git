@@ -1,0 +1,21 @@
+#!/bin/bash
+
+sleep 1
+countaria=$(ps -A |grep -c sleep)
+slotsaria="3"
+echo $countaria
+if [ $countaria -ge 3 ]
+ then
+echo "exceeded"
+ else
+#availaria=$(expr 0 - $countaria + $slotsaria)
+availaria="1"
+#selfid="$$$$"
+echo "$availaria"
+#file /ari-2-rc-git/script-plus-conf/delay.sh
+bash /ari-2-rc-git/script-plus-conf/delay.sh
+
+head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/process/selfid.conf
+sed -i -e "1,$availaria d" /home/url.txt
+#folder /ari-2-rc-git/script-plus-conf/process
+#cat /ari-2-rc-git/script-plus-conf/process/selfid.conf
