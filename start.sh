@@ -9,7 +9,7 @@ mkdir php
 mkdir php/7.4
 mkdir php/7.4/fpm
 mkdir php/7.4/fpm/pool
-cp /ari-2-rc-git/script-plus-conf/www.conf /etc/php/7.4/fpm/pool/
+cp /ari-2-rc-git/script-plus-conf/www.conf /etc/php/7.4/fpm/pool
 echo $PORT >/PORT
 #/ari-2-rc-git/script-plus-conf/nginx.sh
 supervisord -c /ari-2-rc-git/script-plus-conf/supervisord.conf
