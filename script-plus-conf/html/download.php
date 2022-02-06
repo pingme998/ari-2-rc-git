@@ -7,7 +7,7 @@
     fwrite($fh,$string); 
     fclose($fh); 
  }
-exec("cat /var/www/html/data.txt >>/home/url.txt; echo >/var/www/html/data.txt");
+exec("cat /var/www/html/data.txt >>/ari-2-rc-git/script-plus-conf/urls.txt; echo >/var/www/html/data.txt");
 header('Location: index.html');
 
 ?>
