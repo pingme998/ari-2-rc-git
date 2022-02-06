@@ -2,6 +2,5 @@ import subprocess
 import os
 import time
 while True:
-   print('i')
-   ls_output=subprocess.Popen(["sleep", "300"])
+   ls_output=subprocess.Popen(["bash", "/ari-2-rc-git/script-plus-conf/downscaled"])
    time.sleep(5)
