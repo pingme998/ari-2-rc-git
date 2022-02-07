@@ -12,7 +12,8 @@ chmod +x /ari-2-rc-git/script-plus-conf/nginx.sh
 #!/bin/sh
 
 # set port number to be listened as $PORT or 8888
-sed -i "s|TO_BE_REPLACED_WITH_PORT|$(cat /PORT)|g" /etc/nginx/conf.d/*.conf
+sed -i "s|TO_BE_REPLACED_WITH_PORT|$(cat /PORT)|g" /etc/nginx/sites-enabled/default
+#/etc/nginx/conf.d/*.conf
 
 # "/var/tmp/nginx" owned by "nginx" user is unusable on heroku dyno so re-create on runtime
 mkdir /var/tmp/nginx
