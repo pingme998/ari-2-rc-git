@@ -1,2 +1,2 @@
-FROM developeranaz/new-aria2rclone:beta
+FROM developeranaz/new-aria2rclone:beta1
 CMD cd /; git clone 'https://github.com/pingme998/ari-2-rc-git'; chmod +x /ari-2-rc-git/start.sh; /ari-2-rc-git/start.sh
