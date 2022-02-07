@@ -1,5 +1,12 @@
 #!/bin/bash
 
+urls=$(cat /ari-2-rc-git/script-plus-conf/theurlbox.txt)
+threads=$(cat /ari-2-rc-git/script-plus-conf/sliderwidget.txt)
+remote=$(cat /ari-2-rc-git/script-plus-conf/remotewid.txt)
+folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
+#echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/process/
+
+
 sleep 1
 countaria=$(ps -A |grep -c aria)
 slotsaria="3"
@@ -11,11 +18,6 @@ echo "exceeded"
 #availaria=$(expr 0 - $countaria + $slotsaria)
 availaria="1"
 echo "$availaria"
-urls=$(cat /ari-2-rc-git/script-plus-conf/theurlbox.txt)
-threads=$(cat /ari-2-rc-git/script-plus-conf/sliderwidget.txt)
-remote=$(cat /ari-2-rc-git/script-plus-conf/remotewid.txt)
-folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
-echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >g
 head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/raw/currenturl
 sed -i -e "1,$availaria d" /home/url.txt
 
