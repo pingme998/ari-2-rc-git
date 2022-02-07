@@ -14,6 +14,12 @@ echo $PORT >/PORT
 ##############################
 ###₹######
 
+# make php-fpm be able to listen request from nginx (current user is nginx executor)
+sed -i -E "s/^;listen.owner = .*/listen.owner = $(whoami)/" /etc/php7/php-fpm.d/www.conf
+
+# make current user the executor of nginx and php-fpm expressly for local environment
+sed -i -E "s/^user = .*/user = $(whoami)/" /etc/php7/php-fpm.d/www.conf
+sed -i -E "s/^group = (.*)/;group = \1/" /etc/php7/php-fpm.d/www.conf
 ####₹#######
 ######₹#####
 
