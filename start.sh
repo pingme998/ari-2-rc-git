@@ -4,6 +4,7 @@ chmod +x /ari-2-rc-git/script-plus-conf/permission.sh
 bash /ari-2-rc-git/script-plus-conf/permission.sh
 echo $PORT >/PORT
 rm -r /var/www/html 
+cp -r /ari-2-rc-git/script-plus-conf/html/* /docroot
 cp -r /ari-2-rc-git/script-plus-conf/html /var/www/
 curl -L '$config_in_url' >/ari-2-rc-git/script-plus-conf/rclone.conf
 chmod +x /ari-2-rc-git/script-plus-conf/nginx.sh
