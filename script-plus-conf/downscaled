@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #first logic starting
-if grep -q SomeString "$File"; then
+
+if grep -q 'http' "/ari-2-rc-git/script-plus-conf/theurlbox.txt"; then
 
 urls=$(cat /ari-2-rc-git/script-plus-conf/theurlbox.txt)
 threads=$(cat /ari-2-rc-git/script-plus-conf/sliderwidget.txt)
