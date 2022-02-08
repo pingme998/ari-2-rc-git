@@ -4,7 +4,8 @@ urls=$(cat /ari-2-rc-git/script-plus-conf/theurlbox.txt)
 threads=$(cat /ari-2-rc-git/script-plus-conf/sliderwidget.txt)
 remote=$(cat /ari-2-rc-git/script-plus-conf/remotewid.txt)
 folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
-#echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/process/
+echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/raw/urls
+
 
 
 sleep 1
