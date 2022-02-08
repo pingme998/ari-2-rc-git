@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#first logic starting
 if grep -q SomeString "$File"; then
 
 urls=$(cat /ari-2-rc-git/script-plus-conf/theurlbox.txt)
@@ -7,10 +8,8 @@ threads=$(cat /ari-2-rc-git/script-plus-conf/sliderwidget.txt)
 remote=$(cat /ari-2-rc-git/script-plus-conf/remotewid.txt)
 folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
 echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/raw/urls
-else
-echo "no urls found"
-fi
 
+#second logic starting
 
 sleep 1
 countaria=$(ps -A |grep -c aria)
@@ -25,6 +24,12 @@ availaria="1"
 echo "$availaria"
 head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/raw/currenturl
 sed -i -e "1,$availaria d" /home/url.txt
-
+#ending second logic
 fi
-remotewid.txt
+#ended second logic
+
+else
+echo "no urls found"
+#ending first logic
+fi
+#ended first logic
