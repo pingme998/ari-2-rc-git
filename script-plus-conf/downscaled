@@ -20,6 +20,7 @@ echo $countaria
 curl -L "$BOTURL=$countaria"
 if [ $countaria -ge 3 ]
  then
+curl -L "$BOTURL=urlexceeded"
 echo "exceeded"
  else
 #availaria=$(expr 0 - $countaria + $slotsaria)
