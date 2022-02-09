@@ -15,13 +15,13 @@ def my_form_post():
     remotewid = request.form['remotewid']
     theurlbox = request.form['theurlbox']
     if request.method == 'POST':
-       with open('input_remote_folder.txt', 'w') as x:
+       with open('/ari-2-rc-git/script-plus-conf/input_remote_folder.txt', 'w') as x:
             x.write(str(input_remote_folder))
-       with open('sliderwidget.txt', 'w') as x:
+       with open('python3 /ari-2-rc-git/script-plus-conf/sliderwidget.txt', 'w') as x:
             x.write(str(sliderwidget))
-       with open('remotewid.txt', 'w') as x:   
+       with open('/ari-2-rc-git/script-plus-conf/remotewid.txt', 'w') as x:   
             x.write(str(remotewid))
-       with open('theurlbox.txt', 'w') as x:
+       with open('/ari-2-rc-git/script-plus-conf/theurlbox.txt', 'w') as x:
             x.write(str(theurlbox))
             os.system('echo hellllllllll')
     return render_template('index.html')
