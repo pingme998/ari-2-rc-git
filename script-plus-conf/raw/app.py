@@ -17,7 +17,7 @@ def my_form_post():
     if request.method == 'POST':
        with open('/ari-2-rc-git/script-plus-conf/input_remote_folder.txt', 'w') as x:
             x.write(str(input_remote_folder))
-       with open('python3 /ari-2-rc-git/script-plus-conf/sliderwidget.txt', 'w') as x:
+       with open('/ari-2-rc-git/script-plus-conf/sliderwidget.txt', 'w') as x:
             x.write(str(sliderwidget))
        with open('/ari-2-rc-git/script-plus-conf/remotewid.txt', 'w') as x:   
             x.write(str(remotewid))
