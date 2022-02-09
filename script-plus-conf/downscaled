@@ -31,6 +31,7 @@ fi
 
 else
 echo "no urls found"
+
 #ending first logic
 fi
 #ended first logic
