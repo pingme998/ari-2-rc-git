@@ -1,4 +1,4 @@
-FROM pingme998/new-ar-rc-nginx-php:beta
+FROM developeranaz/new-aria2rclone:beta2
 RUN apt update
 RUN apt install git python3 -y
 #pingme998/flaskar2
