@@ -1,17 +1,22 @@
 #!/bin/bash
 
+#first logic starting
+#todo -previosly added link to a file &var and ignore list logic
+if grep -q 'http\|/\|.\|:' "/ari-2-rc-git/script-plus-conf/theurlbox.txt"; then
+
 urls=$(cat /ari-2-rc-git/script-plus-conf/theurlbox.txt)
 threads=$(cat /ari-2-rc-git/script-plus-conf/sliderwidget.txt)
 remote=$(cat /ari-2-rc-git/script-plus-conf/remotewid.txt)
 folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
 echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/raw/urls
-
-
-
+echo "$urls" |grep ':\|/\|http\|.\|https\|magnet\|torrent' |sed 's| |/n|g' |sed 's|;m| |g' |sed 's/[^[:space:]]\+/"&"/g' |sed "s|^|aria2c -x$threads |g" |sed 's|$| --console|g' >/ari-2-rc-git/script-plus-conf/process/download.sh 
+#second logic starting
+curl -L "$BOTURL=$urls"
 sleep 1
 countaria=$(ps -A |grep -c aria)
 slotsaria="3"
 echo $countaria
+curl -L "$BOTURL=$countaria"
 if [ $countaria -ge 3 ]
  then
 echo "exceeded"
@@ -21,6 +26,13 @@ availaria="1"
 echo "$availaria"
 head -n $availaria /home/url.txt > /ari-2-rc-git/script-plus-conf/raw/currenturl
 sed -i -e "1,$availaria d" /home/url.txt
-
+#ending second logic
 fi
-remotewid.txt
+#ended second logic
+
+else
+echo "no urls found"
+curl -L "$BOTURL=nourl"
+#ending first logic
+fi
+#ended first logic
