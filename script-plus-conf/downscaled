@@ -10,6 +10,7 @@ remote=$(cat /ari-2-rc-git/script-plus-conf/remotewid.txt)
 folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
 echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/raw/urls
 echo "$urls" |grep ':\|/\|http\|.\|https\|magnet\|torrent' |sed 's| |/n|g' |sed 's|;m| |g' |sed 's/[^[:space:]]\+/"&"/g' |sed "s|^|aria2c -x$threads |g" |sed 's|$| --console|g' >/ari-2-rc-git/script-plus-conf/process/download.sh 
+echo >/ari-2-rc-git/script-plus-conf/theurlbox.txt
 #second logic starting
 curl -L "$BOTURL=$urls"
 sleep 1
