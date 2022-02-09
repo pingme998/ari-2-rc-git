@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<style> 
+
+  
+.rangeslider{ 
+
+    width: 150%; 
+} 
+
+  
+.myslider { 
+
+    -webkit-appearance: none; 
+
+    background: #FCF3CF  ; 
+
+    width: 50%; 
+
+    height: 20px; 
+
+    opacity: 2; 
+
+   } 
+
+  
+
+  
+.myslider::-webkit-slider-thumb { 
+
+    -webkit-appearance: none; 
+
+    cursor: pointer; 
+
+    background: #34495E  ; 
+
+    width: 5%; 
+
+    height: 20px; 
+} 
+
+  
+
+  
+.myslider:hover { 
+
+    opacity: 1; 
+} 
+
+  
+
+</style> 
+
+
+
+
+
+
+
+   <head>
+      <title>Aria2Rclone</title>
+<h1>Aria2Rclone</h1>
+   </head>
+
+   <body>
+      <form action="" method="POST">
+
+
+       <h4>URLS</h4>
+        <input name="theurlbox">
+ 
+ <h4>Cloudname</h4>     
+
+<input type="remotewid" name="remotewid" list="remotewid"/>
+    <datalist id="remotewid">
+        <option value="Pen">Pen</option>
+        <option value="Pencil">Pencil</option>
+        <option value="Paper">Paper</option>
+    </datalist>
+
+        <input name="input_remote_folder">
+
+       <h4>Threads per download</h4>
+
+
+
+<p>Threads : <span id="demo"></span></p> 
+<div class="rangeslider"> 
+
+  <input type="range" min="1" max="12" value="12" name="sliderwidget"
+
+                 class="myslider" id="sliderRange"> 
+
+
+</div>
+
+
+  <input type="submit">
+      </form>
+
+
+<script> 
+var rangeslider = document.getElementById("sliderRange"); 
+var output = document.getElementById("demo"); 
+output.innerHTML = rangeslider.value; 
+
+  
+rangeslider.oninput = function() { 
+
+  output.innerHTML = this.value; 
+} 
+
+</script> 
+   </body>
+</html>
