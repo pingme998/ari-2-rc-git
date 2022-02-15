@@ -30,7 +30,7 @@ echo "exceeded"
 #availaria=$(expr 0 - $countaria + $slotsaria)
 availaria="1"
 echo "$availaria"
-head -n $availaria  /ari-2-rc-git/script-plus-conf/raw/download.sh > / ari-2-rc-git/script-plus-conf/process/download.sh 
+head -n $availaria  /ari-2-rc-git/script-plus-conf/raw/download.sh > /ari-2-rc-git/script-plus-conf/process/download.sh 
 sed -i -e "1,$availaria d"  /ari-2-rc-git/script-plus-conf/raw/download.sh
 #ending second logic
 fi
