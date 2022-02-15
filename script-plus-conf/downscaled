@@ -38,7 +38,7 @@ fi
 
 else
 echo "no urls found"
-curl -L "$BOTURL=nourl"
+#curl -L "$BOTURL=nourl"
 #ending first logic
 fi
 #ended first logic
