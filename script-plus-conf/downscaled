@@ -11,8 +11,7 @@ folder=$(cat /ari-2-rc-git/script-plus-conf/input_remote_folder.txt)
 echo "theurls='$urls'; thethreads='$threads'; theremote='$remote'; thefolder='$folder'" >/ari-2-rc-git/script-plus-conf/raw/urls
 #echo "$urls" |grep ':\|/\|http\|.\|https\|magnet\|torrent' |sed 's| |/n|g' |sed 's|;m| |g' |sed 's/[^[:space:]]\+/"&"/g' |sed "s|^|aria2c -x$threads |g" |sed 's|$| --console|g' >/ari-2-rc-git/script-plus-conf/process/download.sh 
 #cat log2 |grep 'FILE:' |tail -1 |sed 's/FILE: /FILE="/g;s/$/"/g'
-echo $urls |sed "s| |\n|g" |sed "s|;m| |g" |sed 's/[^[:space:]]\+/"&"/g' |sed "s@^@LOG=dobl-2-quotes\$RANDOMdobl-2-quotes; aria2c -x$threads --show-console-readout=false --console-log-level=warn --summary-interval=5 --max-download-limit=100k --human-readable=true --download-result=full @g" |sed 's@$@ 2>\&1 | tee \$LOG.log; DFILENAME=dobl-2-quotes\$LOG.logdobl-2-quotes; rclone copy  \$DFILENAME \$REMOTE:\$RFOLDER  @g' |sed 's/dobl-2-quotes/"/g' |sed "s|^|REMOTE='$remote'; RFOLDER='$folder'; |g" >> /ari-2-rc-git/script-plus-conf/raw/download.sh 
-
+echo $urls |sed "s| |\n|g" |sed "s|;m| |g" |sed 's/[^[:space:]]\+/"&"/g' |sed "s@^@LOG=dobl-2-quotes\$RANDOMdobl-2-quotes; aria2c -x$threads --show-console-readout=false --console-log-level=warn --summary-interval=5 --max-download-limit=1k --human-readable=true --download-result=full @g" |sed 's@$@ 2>\&1 | tee \$LOG.log; DFILENAME=$(cat dobl-2-quotes\$LOG.logdobl-2-quotes |grep FILE:  |head -1 |sed sing-2-quotess/FILE: //gsing-2-quotes); rclone copy  "\$DFILENAME" "\$REMOTE":"\$RFOLDER"  @g' |sed 's/dobl-2-quotes/"/g' |sed "s|^|REMOTE='$remote'; RFOLDER='$folder'; |g" |sed "s/sing-2-quotes/'/g" >> /ari-2-rc-git/script-plus-conf/raw/download.sh 
 #clearing previous urlfeild
 echo >/ari-2-rc-git/script-plus-conf/theurlbox.txt
 #second logic starting
