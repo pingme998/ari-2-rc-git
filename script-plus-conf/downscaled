@@ -31,6 +31,7 @@ availaria="1"
 echo "$availaria"
 head -n $availaria  /ari-2-rc-git/script-plus-conf/raw/download.sh > /ari-2-rc-git/script-plus-conf/process/download.sh 
 sed -i -e "1,1d"  /ari-2-rc-git/script-plus-conf/raw/download.sh
+echo 'rm /ari-2-rc-git/script-plus-conf/process/download.sh' >>/ari-2-rc-git/script-plus-conf/process/download.sh
 chmod +x /ari-2-rc-git/script-plus-conf/process/download.sh
 #ending second logic
 fi
