@@ -34,7 +34,7 @@ cat /ari-2-rc-git/script-plus-conf/raw/download.sh |head -1 >/ari-2-rc-git/scrip
 #sed -i -e "1,1d"  /ari-2-rc-git/script-plus-conf/raw/download.sh
 cat /ari-2-rc-git/script-plus-conf/raw/download.sh >/ari-2-rc-git/script-plus-conf/raw/downloadcopy.sh
 cat /ari-2-rc-git/script-plus-conf/raw/downloadcopy.sh |sed '1,1d' >/ari-2-rc-git/script-plus-conf/raw/download.sh
-
+cat /ari-2-rc-git/script-plus-conf/raw/download.sh >>/ari-2-rc-git/script-plus-conf/raw/$$.baklog
 echo 'rm /ari-2-rc-git/script-plus-conf/process/download.sh' >>/ari-2-rc-git/script-plus-conf/process/download.sh
 chmod +x /ari-2-rc-git/script-plus-conf/process/download.sh
 #ending second logic
